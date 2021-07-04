@@ -1,0 +1,21 @@
+#Author:harshal_509
+for _ in range(int(input())):
+    n,a,b=map(int,input().split())
+    c=b
+    ans=0
+    if(n==1):
+        ans=1
+    elif(a==1):
+        if((n-1)%b==0):
+            ans=1
+    else:
+        h=1
+        while(h<=n):
+            if((n-h)%(b)==0):
+                ans=1
+                break
+            h*=a
+    if(ans):
+        print("Yes")
+    else:
+        print("No")
