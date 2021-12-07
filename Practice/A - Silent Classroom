@@ -1,0 +1,15 @@
+h=[0 for i in range(26)]
+for _ in range(int(input())):
+    l=input()
+    h[ord(l[0])-ord("a")]+=1
+ans=0
+for i in range(26):
+    if(h[i]):
+        x=h[i]//2
+        y=h[i]-x
+        if(h[i]%2==0):
+            z=y
+        else:
+            z=y-1
+        ans+=(y*(y-1))//2+(z*(z-1))//2
+print(ans)
