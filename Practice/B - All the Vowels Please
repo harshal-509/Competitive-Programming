@@ -1,0 +1,26 @@
+n=int(input())
+f=0
+for i in range(5,n):
+    if(n%i==0):
+        a=i
+        b=n//i
+        f=1
+        break
+if(f==0 or min(a,b)<5):
+    print("-1")
+else:
+    c=max(a,b)
+    d=min(a,b)
+    t="aieou"
+    ans=""
+    j=0
+    for i in range(d):
+        q=t[j:]+t[:j]
+        s=(q)*(c//5)
+        for p in range(c%5):
+            s+=q[p]
+        j+=1
+        if(j==5):
+            j=0
+        ans+=s
+    print(ans)
